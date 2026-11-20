@@ -26,6 +26,7 @@ export default function LoginScreen() {
 
   return (
     <AuthShell title="Velkommen tilbake" subtitle="Logg inn for å fortsette">
+      {error ? <ErrorBanner message={error} /> : null}
       <Field
         label="E-post"
         value={email}
@@ -45,7 +46,6 @@ export default function LoginScreen() {
         onSubmitEditing={submit}
       />
 
-      {error ? <ErrorBanner message={error} /> : null}
       <PrimaryButton title="Logg inn" onPress={submit} loading={loading} />
     </AuthShell>
   );
