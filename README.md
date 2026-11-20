@@ -18,7 +18,10 @@ Create a project and run the SQL in `db/supabase/migrations` (SQL editor). Note 
 
 Local run: copy `stempl-backend/.env.example` to `.env`, then `npm install && npm start`.
 
-## 3. App
+## 3. Web app (Render static site)
+The same blueprint also creates `stempl-web`. Set `EXPO_PUBLIC_API_URL` (the API's onrender.com URL, no trailing slash) and `EXPO_PUBLIC_MAPBOX_TOKEN`; share the `stempl-web` URL. Needs https for location (Render provides it).
+
+## 4. Mobile app
 Copy `stempl-frontend/sempl-app/.env.example` to `.env`, set `EXPO_PUBLIC_API_URL` to the Render URL and add a public Mapbox token.
 
 - Try it: `npx expo start`
