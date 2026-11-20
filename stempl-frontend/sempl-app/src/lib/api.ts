@@ -17,7 +17,8 @@ export async function api<T>(
   options: { body?: unknown; token?: string | null; method?: 'GET' | 'POST' | 'PATCH' | 'DELETE' } = {},
 ): Promise<T> {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10000);
+  // Free hosting (Render) can take up to a minute to wake the server after idle time.
+  const timeout = setTimeout(() => controller.abort(), 60000);
   try {
     const res = await fetch(`${API_URL}${path}`, {
       method: options.method ?? (options.body ? 'POST' : 'GET'),
