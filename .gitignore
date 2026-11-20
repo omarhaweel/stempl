@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.zip
+.expo/
+dist/
+web-build/
+.DS_Store
+db/migrations-backup.zip
